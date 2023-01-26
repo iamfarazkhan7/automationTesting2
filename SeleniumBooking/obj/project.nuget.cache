@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "xCmjM44ZEV2OlEgF3lHlf0RQ/cWxGavO2c/s/u/h0Jq8gkdt8NXwp1b9DkcT1sI5n55GvU9PJNfcZx5ATzcfsw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\shezs\\source\\repos\\SpecflowSelenium12012023\\SeleniumBooking\\SpecflowCalculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shezs\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\nunittestadapter\\2.3.0\\nunittestadapter.2.3.0.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\selenium.chrome.webdriver\\85.0.0\\selenium.chrome.webdriver.85.0.0.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\selenium.mozilla.firefox.webdriver\\0.6.0.1\\selenium.mozilla.firefox.webdriver.0.6.0.1.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\selenium.webdriver\\4.7.0\\selenium.webdriver.4.7.0.nupkg.sha512",
+    "C:\\Users\\shezs\\.nuget\\packages\\selenium.webdriver.chromedriver\\109.0.5414.7400\\selenium.webdriver.chromedriver.109.0.5414.7400.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Getting More Search Results using more keywords")]
-        [NUnit.Framework.TestCaseAttribute("automation training with selenium", "15,10,10,10,20", null)]
+        [NUnit.Framework.TestCaseAttribute("automation training guide", "14,11,10,10,20", null)]
         [NUnit.Framework.TestCaseAttribute("automation training benefits", "14,11,10,10,10", null)]
         public void GettingMoreSearchResultsUsingMoreKeywords(string searchValue, string expectedCounts, string[] exampleTags)
         {

@@ -17,11 +17,12 @@ namespace TG.Test.WebApps.Common.Selenium
     public class Driver
     {
         public IWebDriver Browser;
+
         public List<NetworkRequest> NetworkRequests = new List<NetworkRequest>();
 
         private TimeSpan implicitWait;
 
-        public IDevTools DevTools => Browser as IDevTools;
+        //public IDevTools DevTools => Browser as IDevTools;
 
         public void InitializeDriver(BrowserType browserType, string featureTitle = "")
         {
@@ -111,7 +112,7 @@ namespace TG.Test.WebApps.Common.Selenium
         {
             if (IsBrowserExist())
             {
-                //Browser.Dispose();
+                Browser.Dispose();
                 Browser.Quit();
                 Browser = null;
             }
@@ -144,10 +145,10 @@ namespace TG.Test.WebApps.Common.Selenium
             var browserTabs = WaitForWindowsCountToBe(windowsCount, timeoutInSeconds);
             Browser.SwitchTo().Window(browserTabs.ElementAt(windowIndex));
 
-            if (DevTools.HasActiveDevToolsSession)
-            {
-                InitNetworkAdapter();
-            }
+            //if (DevTools.HasActiveDevToolsSession)
+            //{
+            //    InitNetworkAdapter();
+            //}
         }
 
         public void WaitForSpinnerToFinish()
@@ -172,10 +173,10 @@ namespace TG.Test.WebApps.Common.Selenium
 
                     if (GetCurrentUrl().Contains(urlPart))
                     {
-                        if (DevTools.HasActiveDevToolsSession)
-                        {
-                            InitNetworkAdapter();
-                        }
+                        //if (DevTools.HasActiveDevToolsSession)
+                        //{
+                        //    InitNetworkAdapter();
+                        //}
 
                         return true;
                     }
@@ -185,75 +186,8 @@ namespace TG.Test.WebApps.Common.Selenium
             return false;
         }
 
-        public void InitNetworkInterception(DevToolsFetch.RequestPattern requestPattern)
-        {
-            DevToolsSession session = DevTools.GetDevToolsSession();
 
-            var enableCommandSettings = new DevToolsFetch.EnableCommandSettings();
-            enableCommandSettings.Patterns = new DevToolsFetch.RequestPattern[] { requestPattern };
 
-            var fetchAdapter = session.GetVersionSpecificDomains<DevTools.DevToolsSessionDomains>().Fetch;
-            fetchAdapter.Enable(enableCommandSettings);
-
-            async void RequestIntercepted(object sender, DevToolsFetch.RequestPausedEventArgs e)
-            {
-                var responseBody = await fetchAdapter.GetResponseBody(new DevToolsFetch.GetResponseBodyCommandSettings()
-                {
-                    RequestId = e.RequestId
-                });
-
-                await fetchAdapter.ContinueRequest(new DevToolsFetch.ContinueRequestCommandSettings()
-                {
-                    RequestId = e.RequestId
-                });
-
-                NetworkRequests.Add(new NetworkRequest(e.Request, responseBody));
-            }
-
-            fetchAdapter.RequestPaused += RequestIntercepted;
-        }
-
-        public void InitNetworkAdapter()
-        {
-            if (DevTools.HasActiveDevToolsSession)
-            {
-                DevTools.CloseDevToolsSession();
-            }
-
-            var session = DevTools.GetDevToolsSession();
-            var networkAdapter = session.GetVersionSpecificDomains<DevTools.DevToolsSessionDomains>().Network;
-            networkAdapter.Enable(new DevToolsNetwork.EnableCommandSettings());
-
-            networkAdapter.RequestWillBeSent += async (sender, e) =>
-            {
-                if (e.Type == DevToolsNetwork.ResourceType.XHR)
-                {
-                    var networkRequest = GetOrAddNewNetworkRequest(e.RequestId);
-                    networkRequest.Request = e.Request;
-                }
-            };
-
-            networkAdapter.ResponseReceived += async (sender, e) =>
-            {
-                if (e.Type == DevToolsNetwork.ResourceType.XHR)
-                {
-                    DevToolsNetwork.GetResponseBodyCommandResponse responseBody = null;
-
-                    try
-                    {
-                        responseBody = await networkAdapter.GetResponseBody(new DevToolsNetwork.GetResponseBodyCommandSettings { RequestId = e.RequestId });
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-                    var networkRequest = GetOrAddNewNetworkRequest(e.RequestId);
-                    networkRequest.Response = e.Response;
-                    networkRequest.NetworkResponseBody = responseBody;
-                }
-            };
-        }
 
         private IEnumerable<string> GetAllWindowWillBeOpened(int timeoutInSeconds = 5)
         {
@@ -276,21 +210,6 @@ namespace TG.Test.WebApps.Common.Selenium
             return windowHandles;
         }
 
-        private NetworkRequest GetOrAddNewNetworkRequest(string requestId)
-        {
-            var networkRequest = NetworkRequests.FirstOrDefault(networkRequest => networkRequest.RequestId == requestId);
-
-            if (networkRequest != null)
-            {
-                return networkRequest;
-            }
-            else
-            {
-                networkRequest = new NetworkRequest { RequestId = requestId };
-                NetworkRequests.Add(networkRequest);
-
-                return networkRequest;
-            }
-        }
+        
     }
 }

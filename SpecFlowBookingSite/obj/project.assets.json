@@ -7427,11 +7427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SpecFlowBookingSite\\SpecFlow.Specs.csproj",
+      "projectUniqueName": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SpecFlowBookingSite\\SpecFlow.Specs.csproj",
       "projectName": "SpecFlow.Specs",
-      "projectPath": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SpecFlowBookingSite\\SpecFlow.Specs.csproj",
+      "projectPath": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SpecFlowBookingSite\\SpecFlow.Specs.csproj",
       "packagesPath": "C:\\Users\\Faraz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SpecFlowBookingSite\\obj\\",
+      "outputPath": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SpecFlowBookingSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7452,8 +7452,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj": {
-              "projectPath": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj"
+            "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj": {
+              "projectPath": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj"
             }
           }
         }

@@ -1,5 +1,12 @@
 ﻿using OpenQA.Selenium;
 using TG.Test.WebApps.Common.Selenium;
+using SeleniumExtras.PageObjects;
+using System.Linq;
+using TechTalk.SpecFlow;
+using TG.Test.WebApps.Common.Extensions;
+using TG.Test.WebApps.Common.Pages.Base;
+
+
 
 namespace TG.Test.WebApps.Common.Pages.Base
 {

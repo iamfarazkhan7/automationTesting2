@@ -13,5 +13,5 @@ Scenario Outline: Getting More Search Results using more keywords
 	And The result counts are validated with these <ExpectedCounts>
 Examples: 
 	| SearchValue                       | ExpectedCounts |
-	| automation training with selenium | 15,10,10,10,20 |
+	| automation training guide		    | 14,11,10,10,20 |
 	| automation training benefits      | 14,11,10,10,10 |

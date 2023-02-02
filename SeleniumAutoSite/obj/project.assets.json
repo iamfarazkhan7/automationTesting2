@@ -6696,11 +6696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj",
+      "projectUniqueName": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj",
       "projectName": "SeleniumAutoSite",
-      "projectPath": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj",
+      "projectPath": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SeleniumAutoSite\\SeleniumAutoSite.csproj",
       "packagesPath": "C:\\Users\\Faraz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Faraz\\Downloads\\SpecflowSelenium12012023\\SeleniumAutoSite\\obj\\",
+      "outputPath": "C:\\Users\\Faraz\\source\\repos\\SpecflowSelenium12012023\\SeleniumAutoSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
